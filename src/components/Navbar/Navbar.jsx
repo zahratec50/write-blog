@@ -6,8 +6,13 @@ import { IoMoonOutline } from "react-icons/io5";
 import { BsFillSunFill } from "react-icons/bs";
 import { FcAbout } from "react-icons/fc";
 
+import { InfoMenu } from "../infoMenu/InfoMenu";
+
 export default function Navbar() {
   const [theme, setTheme] = useState(false);
+  
+  
+  
   return (
     <div>
         
@@ -20,11 +25,11 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center justify-center gap-x-1 lg:gap-x-3 w-[140px] sm:w-[175.23px] lg:w-[300px]">
-          <div onClick={() => setTheme((previous) => !previous)}>
+          <div className="cursor-pointer" onClick={() => setTheme((previous) => !previous)}>
             {theme ? <BsFillSunFill className="w-3 h-3 sm:w-6 sm:h-6" /> : <IoMoonOutline className="w-3 h-3 sm:w-6 sm:h-6" />}
           </div>
-          <div className="flex items-center justify-center bg-gray-200 rounded-full w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8">
-            <FcAbout className="w-3 h-3 sm:w-6 sm:h-6"/>
+          <div className="flex items-center justify-center bg-gray-200 rounded-full w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 cursor-pointer">
+            <InfoMenu/>
           </div>
           <div className="text-[8px] sm:text-[12px] lg:text-sm">
             <button>ورود</button>
@@ -33,6 +38,8 @@ export default function Navbar() {
           
         </div>
       </section>
+
+      
     </div>
   );
 }
