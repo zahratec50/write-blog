@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { IoSearch } from "react-icons/io5";
 import { IoMoonOutline } from "react-icons/io5";
@@ -10,7 +10,7 @@ import { InfoMenu } from "../infoMenu/InfoMenu";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(false);
-  
+  const navigate = useNavigate()
   
   
   return (
@@ -32,8 +32,8 @@ export default function Navbar() {
             <InfoMenu/>
           </div>
           <div className="text-[8px] sm:text-[12px] lg:text-sm">
-            <button>ورود</button>
-            <button className="bg-blue-500 text-white rounded-full">ثبت نام</button>
+            <button onClick={() => navigate('/login')}>ورود</button>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full">ثبت نام</button>
           </div>
           
         </div>
