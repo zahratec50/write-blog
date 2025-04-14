@@ -14,7 +14,7 @@ export default function Navbar() {
   
   
   return (
-    <div>
+    <div className="flex items-center justify-center">
         
       <section className="flex items-center justify-between w-[300px] sm:w-[590px] md:w-[700px] lg:w-[1000px] xl:w-[1100px] pt-2">
         <img src="/../../images/logo.png" alt="logo" className="w-[35px] h-[35px] sm:w-[60px] sm:h-[60px] sm:rounded-xl" />
