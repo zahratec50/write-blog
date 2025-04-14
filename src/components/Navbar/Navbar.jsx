@@ -33,7 +33,7 @@ export default function Navbar() {
           </div>
           <div className="text-[8px] sm:text-[12px] lg:text-sm">
             <button onClick={() => navigate('/login')}>ورود</button>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full">ثبت نام</button>
+            <button onClick={() => navigate('/register')} className="bg-blue-500 hover:bg-blue-600 text-white rounded-full">ثبت نام</button>
           </div>
           
         </div>
