@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { FcGoogle } from "react-icons/fc";
+
 export default function Register() {
   const onRegisterForm = () => {
     console.log("register");
@@ -17,62 +19,101 @@ export default function Register() {
           <h2 className="text-xl md:text-4xl font-bold">
             اینجا جایی ست برای تمام نویسندگان
           </h2>
-          <h3 className="text-zinc-700 text-sm md:text-xl font-semibold">
-            با ساخت حساب کاربری خود به دنیای نویسندگی وارد شو.
+          <h3 className="text-green-700 text-sm md:text-xl font-semibold">
+            در رویا غرق شو
           </h3>
-          <p className="font-bold text-emerald-700">اینجا پر از داستان های قشنگه</p>
         </div>
 
         <form onSubmit={onRegisterForm}>
           <h3 className="text-balance md:text-2xl text-blue-500 font-bold mb-8">
             فرم ثبت نام
           </h3>
-          <div className="grid grid-cols-2 gap-x-2 items-center justify-center">
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="text"
-                placeholder="نام و نام خانوادگی "
-                className="w-[125px] h-7 pb-2 md:w-[250px] md:h-10 outline-0"
-              />
-            </div>
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="email"
-                placeholder="ایمیل"
-                className="w-[125px] h-7 pb-2 md:w-[250px] md:h-10 outline-0"
-              />
-            </div>
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="number"
-                placeholder="شماره موبایل"
-                className="w-[125px] h-7 pb-2 md:w-[250px] md:h-10 outline-0"
-              />
+          <div className="grid grid-cols-2 gap-x-4 items-center justify-center">
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="name" className="font-bold">
+                نام و نام خانوادگی
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="text"
+                  id="name"
+                  className="w-[200px] h-7 md:w-[400px] md:h-9 outline-0 px-2"
+                />
+              </div>
             </div>
 
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="file"
-                className="w-[125px] h-7 md:w-[250px] md:h-10 outline-0"
-              />
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="email" className="font-bold">
+                ایمیل
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="email"
+                  id="email"
+                  className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                />
+              </div>
             </div>
 
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="password"
-                placeholder="رمز عبور"
-                className="w-[125px] h-7 pb-2 md:w-[250px] md:h-10 outline-0"
-              />
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="phon" className="font-bold">
+                موبایل
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="tel"
+                  id="phon"
+                  className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                />
+              </div>
             </div>
-            <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] border-[1px] border-gray-400 rounded-2xl flex items-start justify-start pr-3 mb-2">
-              <input
-                type="password"
-                placeholder="تکرار رمز عبور"
-                className="w-[125px] h-7 pb-2 md:w-[250px] md:h-10 outline-0"
-              />
+
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="img" className="font-bold">
+                عکس
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="file"
+                  id="img"
+                  className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="password" className="font-bold">
+                رمز عبور
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="password"
+                  id="password"
+                  className="w-[250px] h-7  md:w-[500px] md:h-10 outline-0 px-2"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="repeatPassword" className="font-bold">
+                تکرار رمز عبور
+              </label>
+              <div className="w-[250px] h-[30px] md:w-[500px] md:h-[40px] shadow-zinc-200 bg-white shadow-xl border-x-[1px] border-zinc-400 rounded-sm flex items-start justify-start pr-3 mb-2">
+                <input
+                  type="password"
+                  id="repeatPassword"
+                  className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                />
+              </div>
             </div>
           </div>
-          <div className="flex justify-end text-white">
+          <p className="flex items-center justify-end gap-x-2">
+            <Link to="/" className="text-gray-600 hover:text-gray-800 mb-2">
+              با قوانین writer موافقم
+            </Link>
+            <input type="checkbox" className="w-4 h-4" />
+          </p>
+          <div className="flex flex-col items-center justify-self-end text-white">
             <button
               type="submit"
               className="mt-5 bg-blue-700 flex items-center justify-center gap-x-2 text-[12px] md:text-[15px] font-semibold rounded-full"
@@ -80,19 +121,16 @@ export default function Register() {
               ثبت نام
             </button>
           </div>
+          <div className="flex flex-col items-center">
+            <Link
+              to="/"
+              className="w-[250px] flex items-center justify-around text-sm text-zinc-600 font-semibold border-[1px] py-2 bg-zinc-200 hover:text-zinc-800 hover:bg-zinc-300 rounded-sm"
+            >
+              ورود با اکانت گوگل
+              <FcGoogle className="w-6 h-6 " />
+            </Link>
+          </div>
         </form>
-        <div className="flex flex-col items-center mt-10">
-          <Link to="/" className="text-red-800 hover:text-red-600 mb-2">
-            قوانین writer
-          </Link>
-
-          <Link
-            to="/"
-            className="w-[250px] flex items-center justify-center text-sm text-zinc-800 mb-6 border-[1px] py-2 bg-zinc-400 hover:text-zinc-800 hover:bg-zinc-500 rounded-sm"
-          >
-            ورود با اکانت گوگل
-          </Link>
-        </div>
       </section>
     </div>
   );
