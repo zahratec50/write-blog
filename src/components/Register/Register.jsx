@@ -1,12 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { FcGoogle } from "react-icons/fc";
 
+import { db } from "../firebase/firebase";
+import { push, ref } from "firebase/database";
+
 export default function Register() {
-  const onRegisterForm = () => {
-    console.log("register");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phon: "",
+    password: "",
+    repeatPassword: "",
+    img: "",
+  });
+
+  const changeValueInputRegister = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
+  const onRegisterForm = (event) => {
+    event.preventDefault();
+
+    const usersRef = ref(db, "users");
+    push(usersRef, formData).then(() => {
+      Swal.fire({
+        title: "ثبت نام با موفقیت انجام شد!",
+        icon: "success",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phon: "",
+        password: "",
+        repeatPassword: "",
+        img: "",
+      });
+    }).catch(()=> {
+      Swal.fire({
+        title: "خطا در ثبت نام! دوباره تلاش کنید",
+        icon: "error",
+      });
+    })
+  };
+
   return (
     <div className="flex items-center justify-center  bg-gray-100">
       <section>
@@ -37,7 +81,10 @@ export default function Register() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="w-[200px] h-7 md:w-[400px] md:h-9 outline-0 px-2"
+                  value={formData.name}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
@@ -50,7 +97,10 @@ export default function Register() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                  value={formData.email}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
@@ -63,7 +113,10 @@ export default function Register() {
                 <input
                   type="tel"
                   id="phon"
+                  name="phon"
                   className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                  value={formData.phon}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
@@ -76,7 +129,10 @@ export default function Register() {
                 <input
                   type="file"
                   id="img"
+                  name="img"
                   className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                  value={formData.img}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
@@ -89,7 +145,10 @@ export default function Register() {
                 <input
                   type="password"
                   id="password"
+                  name="password"
                   className="w-[250px] h-7  md:w-[500px] md:h-10 outline-0 px-2"
+                  value={formData.password}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
@@ -102,7 +161,10 @@ export default function Register() {
                 <input
                   type="password"
                   id="repeatPassword"
+                  name="repeatPassword"
                   className="w-[250px] h-7 md:w-[500px] md:h-10 outline-0 px-2"
+                  value={formData.repeatPassword}
+                  onChange={changeValueInputRegister}
                 />
               </div>
             </div>
