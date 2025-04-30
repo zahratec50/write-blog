@@ -19,9 +19,9 @@ export default function Navbar() {
       <section className="flex items-center justify-between w-[300px] sm:w-[590px] md:w-[700px] lg:w-[1000px] xl:w-[1100px] pt-2">
         <img src="/../../images/logo.png" alt="logo" className="w-[35px] h-[35px] sm:w-[60px] sm:h-[60px] sm:rounded-xl" />
 
-        <div className="flex items-center justify-start gap-x-2 pr-3 w-[150px] h-8 sm:w-[250px] lg:w-[350px] sm:h-11 bg-gray-200 rounded-full">
+        <div className="flex items-center justify-start gap-x-2 pr-3 w-[150px] h-8 sm:w-[250px] lg:w-[500px] sm:h-11 bg-gray-200 rounded-full">
           <IoSearch className="w-5 h-5 " />
-          <input type="text" placeholder="جستجو در writer ..." className="w-[250px] h-5 pb-2 text-[8px] sm:text-sm font-semibold outline-0" />
+          <input type="text" placeholder="جستجو در writer ..." className="w-[350px] h-5 pb-2 text-[8px] sm:text-sm font-semibold outline-0" />
         </div>
 
         <div className="flex items-center justify-center gap-x-1 lg:gap-x-3 w-[140px] sm:w-[175.23px] lg:w-[300px]">
